@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARIANUSS - Moda Feminina Sofisticada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-video {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .hero-video video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            text-align: center;
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        .manifesto-item {
+            transition: all 0.3s ease;
+        }
+        .manifesto-item:hover {
+            transform: translateY(-5px);
+        }
+        .ham-menu {
+            transition: all 0.3s ease;
+        }
+        .nav-active {
+            left: 0;
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .collection-tab.active {
+            border-bottom: 3px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900">MARIANUSS</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-blue-900 hover:text-gold-600 transition">Início</a>
+                <a href="#essence" class="text-blue-900 hover:text-gold-600 transition">Nossa Essência</a>
+                <a href="#collections" class="text-blue-900 hover:text-gold-600 transition">Coleções</a>
+                <a href="#manifesto" class="text-blue-900 hover:text-gold-600 transition">Manifesto</a>
+                <a href="#contact" class="text-blue-900 hover:text-gold-600 transition">Contato</a>
+            </nav>
+            <div class="md:hidden ham-menu">
+                <button id="menu-btn" class="text-blue-900 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed left-full top-0 w-full h-full bg-white transition-all duration-300 ease-in-out">
+            <div class="container mx-auto px-6 py-4 flex flex-col h-full">
+                <div class="flex justify-between items-center">
+                    <div class="text-2xl font-bold text-blue-900">MARIANUSS</div>
+                    <button id="close-btn" class="text-blue-900 focus:outline-none">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="flex flex-col space-y-6 mt-10">
+                    <a href="#hero" class="text-2xl text-blue-900 py-2">Início</a>
+                    <a href="#essence" class="text-2xl text-blue-900 py-2">Nossa Essência</a>
+                    <a href="#collections" class="text-2xl text-blue-900 py-2">Coleções</a>
+                    <a href="#manifesto" class="text-2xl text-blue-900 py-2">Manifesto</a>
+                    <a href="#contact" class="text-2xl text-blue-900 py-2">Contato</a>
+                </nav>
+                <div class="flex space-x-6 mt-auto pb-10">
+                    <a href="https://www.instagram.com/marianussoficial" target="_blank" class="text-blue-900 text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/" class="text-blue-900 text-2xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-video">
+        <video autoplay muted loop class="w-full h-full object-cover">
+            <!-- Placeholder video - would be replaced with brand video -->
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-fabric-flowing-in-the-wind-17647-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 fade-in">MARIANUSS</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto fade-in">A forma mais confortável de se 'vestir' é ficando nua. Nós somos a segunda melhor opção.</p>
+            <a href="#collections" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-blue-900 transition duration-300 fade-in">
+                Conheça as Coleções
+            </a>
+        </div>
+    </section>
+
+    <!-- Essence Section -->
+    <section id="essence" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Feita por uma mulher, para todas as Marias.</h2>
+                    <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+                        "MARIANUSS nasceu do sonho de Lúcia, uma mulher real, que entende a busca por versatilidade e conforto sem abrir mão da elegância. Cada peça é uma celebração da força feminina, criada para vestir você em todos os momentos da sua vida – do trabalho à praia, da academia a um encontro especial. Nós criamos mais que roupas, criamos uma segunda pele."
+                    </p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/800x1000" alt="Lúcia, fundadora da MARIANUSS, trabalhando em seu ateliê com tecidos de alta qualidade" class="w-full h-auto rounded shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12">Vista-se de Você</h2>
+            
+            <div class="flex justify-center mb-12">
+                <div class="flex space-x-8 border-b border-gray-200">
+                    <button class="collection-tab text-lg px-4 py-2 active" data-tab="casual">Casual & Chic</button>
+                    <button class="collection-tab text-lg px-4 py-2" data-tab="fitness">Fitness & Conforto</button>
+                    <button class="collection-tab text-lg px-4 py-2" data-tab="beach">Moda Praia</button>
+                </div>
+            </div>
+
+            <div id="casual-collection" class="collection-content grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Casual & Chic Products -->
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Vestido elegante MARIANUSS em azul marinho com detalhes dourados para eventos especiais" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Conjunto MARIANUSS de calça larga e blusa drapeada em tecido fluido para o dia a dia" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Blazer MARIANUSS com corte moderno e detalhes em botões dourados para looks sofisticados" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Saia plissada MARIANUSS em tom nude com blusa de seda para looks profissionais" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="fitness-collection" class="collection-content hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Fitness & Conforto Products -->
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Legging MARIANUSS de alta compressão com detalhes geométricos para atividades físicas" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Top esportivo MARIANUSS com sustentação reforçada e tecido respirável" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Moletom MARIANUSS oversized em algodão orgânico para looks casuais" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Shorts MARIANUSS com cintura alta e tecnologia secagem rápida" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="beach-collection" class="collection-content hidden grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Moda Praia Products -->
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Biquíni MARIANUSS tomara que caia em azul marinho com detalhes dourados" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Maiô MARIANUSS inteiro com corte frontal elegante para praia e piscina" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Caftan MARIANUSS em voil estampado para cobertura de praia sofisticada" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card relative overflow-hidden">
+                    <img src="https://placehold.co/600x800" alt="Chapéu MARIANUSS de palha com detalhes em fita de cetim para dias ensolarados" class="w-full h-auto">
+                    <div class="product-overlay absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-900 hover:text-white transition">
+                            Ver no Instagram
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <section id="manifesto" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-16">O que nos move</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="manifesto-item bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl text-blue-900 mb-4">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Conforto que Liberta</h3>
+                    <p class="text-gray-700">Criamos peças que se adaptam ao seu corpo, permitindo movimento e autenticidade em cada gesto.</p>
+                </div>
+                
+                <div class="manifesto-item bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl text-blue-900 mb-4">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Versatilidade para a Vida Real</h3>
+                    <p class="text-gray-700">Peças pensadas para transitar entre diferentes ambientes e situações do cotidiano feminino.</p>
+                </div>
+                
+                <div class="manifesto-item bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl text-blue-900 mb-4">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Sofisticação em cada Detalhe</h3>
+                    <p class="text-gray-700">Do corte ao acabamento, cada elemento é cuidadosamente planejado para elevar sua confiança.</p>
+                </div>
+                
+                <div class="manifesto-item bg-white p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl text-blue-900 mb-4">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Autenticidade que Empodera</h3>
+                    <p class="text-gray-700">Vestir MARIANUSS é celebrar sua essência única, sem concessões ou padrões impostos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-20 bg-blue-900 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronta para encontrar sua segunda pele?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">As peças mais desejadas estão a um clique de distância. Siga nosso Instagram para novidades diárias e compre diretamente por lá!</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.instagram.com/marianussoficial" target="_blank" class="bg-gold-600 hover:bg-gold-700 text-blue-900 px-8 py-3 rounded-full font-bold transition duration-300 flex items-center">
+                    <i class="fab fa-instagram mr-2"></i> Seguir e Comprar no Instagram
+                </a>
+                <a href="https://wa.me/" class="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-bold transition duration-300 flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i> Fale pelo WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="text-2xl font-bold text-gold-600 mb-4">MARIANUSS</div>
+                    <p class="text-gray-400 max-w-md">Criando a segunda pele perfeita para mulheres reais desde 2018.</p>
+                </div>
+                
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#hero" class="text-gray-400 hover:text-gold-600 transition">Início</a></li>
+                        <li><a href="#essence" class="text-gray-400 hover:text-gold-600 transition">Nossa Essência</a></li>
+                        <li><a href="#collections" class="text-gray-400 hover:text-gold-600 transition">Coleções</a></li>
+                        <li><a href="#manifesto" class="text-gray-400 hover:text-gold-600 transition">Manifesto</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-gold-600 transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contato</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400"><i class="fas fa-envelope mr-2"></i> contato@marianuss.com.br</li>
+                        <li class="text-gray-400"><i class="fas fa-phone mr-2"></i> (XX) XXXX-XXXX</li>
+                        <li class="text-gray-400"><i class="fab fa-whatsapp mr-2"></i> (XX) XXXXX-XXXX</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://www.instagram.com/marianussoficial" target="_blank" class="text-gray-400 hover:text-gold-600 transition text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold-600 transition text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold-600 transition text-xl">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 MARIANUSS | Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('left-full');
+            mobileMenu.classList.add('left-0');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('left-0');
+            mobileMenu.classList.add('left-full');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Collection tabs functionality
+        const tabs = document.querySelectorAll('.collection-tab');
+        const collections = {
+            casual: document.getElementById('casual-collection'),
+            fitness: document.getElementById('fitness-collection'),
+            beach: document.getElementById('beach-collection')
+        };
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all collections
+                Object.values(collections).forEach(col => col.classList.add('hidden'));
+                
+                // Show selected collection
+                const tabName = tab.getAttribute('data-tab');
+                collections[tabName].classList.remove('hidden');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('left-0');
+                    mobileMenu.classList.add('left-full');
+                    document.body.style.overflow = 'auto';
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const manifestoItems = document.querySelectorAll('.manifesto-item');
+            
+            manifestoItems.forEach(item => {
+                const itemPosition = item.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(itemPosition < screenPosition) {
+                    item.style.opacity = '1';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initialize
+    </script>
+</body>
+</html>
